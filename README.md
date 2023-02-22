@@ -12,7 +12,7 @@ Open your favourite web browser and follow the link: https://amanda-lacroix.gith
 ## Screenshot
 
 Screenshot of the demo webpage to verify against the live website as noted above:
-![.](./assets/)
+![Sample of website showing 5 day forcast and city options](./assets/06-server-side-apis-homework-demo)
 
 
 ## Credits
