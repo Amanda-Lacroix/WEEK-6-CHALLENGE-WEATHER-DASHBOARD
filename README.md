@@ -2,7 +2,7 @@
 
 ## Description
 
-A dashboard where I can see a five day forcast for cities I choose around the world.
+A dashboard where I can see a five day forecast for cities I choose around the world.
 
 
 ## Installation
