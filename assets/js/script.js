@@ -1,5 +1,5 @@
 // Getting the required HTML elements
-var cityName = document.querySelector(".searchInput"). value;
+var cityName = document.querySelector(".searchInput");
 var searchButton = document.querySelector("#search-btn");
 
 // Adding the event listener

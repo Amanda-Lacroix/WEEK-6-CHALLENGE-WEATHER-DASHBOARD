@@ -19,10 +19,10 @@
 
     <div class="container">
         <div>
-            <h2 class="fiveDaySearch">Search by City</h1>
+            <h2 class="fiveDaySearch">Search by City</h2>
             <form>
                 <input class="searchInput" type="text" placeholder="City Name">
-                <button class="btn btn-primary" id="search-btn" type="submit" onclick="getWeather()">Submit</button>
+                <button class="btn btn-primary" id="search-btn" type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -31,12 +31,12 @@
         <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h3 class="card-title">Current Weather</h3>
-            <p class="card-text">City Name</p>
-            <p class="card-text">Date</p>
-            <p class="card-text">Icon</p>
-            <p class="card-text">Temperature</p>
-            <p class="card-text">Humidity</p>
-            <p class="card-text">Wind Speed</p>
+            <p class="card-text" id="current-city"></p>
+            <p class="card-text" id="current-date"></p>
+            <p class="card-text" id="current-icon"></p>
+            <p class="card-text" id="current-temperature"></p>
+            <p class="card-text" id="current-humidity"></p>
+            <p class="card-text" id="current-wind-speed"></p>
         </div>
         </div> 
     </div>
@@ -45,12 +45,12 @@
         <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h3 class="card-title">Future Weather</h3>
-            <p class="card-text">City Name</p>
-            <p class="card-text">Date</p>
-            <p class="card-text">Icon</p>
-            <p class="card-text">Temperature</p>
-            <p class="card-text">Humidity</p>
-            <p class="card-text">Wind Speed</p>
+            <p class="card-text" id="future-city"></p>
+            <p class="card-text" id="future-date"></p>
+            <p class="card-text" id="future-icon"></p>
+            <p class="card-text" id="future-temperature"></p>
+            <p class="card-text" id="future-humidity"></p>
+            <p class="card-text" id="future-wind-speed"></p>
         </div>
         </div>
     </div>
