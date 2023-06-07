@@ -7,13 +7,20 @@ var cityList = document.querySelector("#city-list");
 searchButton.addEventListener("click", function() {
     var cityName = document.querySelector(".searchInput").value;
     // setting the cities to local storage
-    localStorage.setItem("City", cityName);
-    getWeather(cityName);
+  var savedCities = JSON.parse(localStorage.getItem("savedCities")) || [];
+  savedCities.push(cityName);
+  localStorage.setItem("savedCities", JSON.stringify(savedCities));
+  getWeather(cityName);
   });
 
 // Getting the Cities from local storage and adding to list
-  var getCities = JSON.parse(window.localStorage.getItem('savedCities'));
-  getCities.cityList.append('<li>' + item + '</li>');
+  var getCities = JSON.parse(localStorage.getItem("savedCities")) || [];
+  var cityList = document.querySelector("#city-list");
+  getCities.forEach(function(city) {
+    var listItem = document.createElement("li");
+    listItem.textContent = city;
+    cityList.appendChild(listItem);
+});
 
 
 //   Getting the weather from the API
@@ -33,7 +40,10 @@ fetch(requestApi)
   });
 }
 
-getWeather();
+var lastCity = getCities[getCities.length - 1];
+if (lastCity) {
+  getWeather(lastCity);
+}
 
 // Function to display the information from the API
 function displayWeather(data){
