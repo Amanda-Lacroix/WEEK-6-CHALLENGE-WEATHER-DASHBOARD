@@ -1,12 +1,20 @@
 // Getting the required HTML elements
-var cityName = document.querySelector(".searchInput");
+var cityName = document.querySelector(".searchInput").value;
 var searchButton = document.querySelector("#search-btn");
+var cityList = document.querySelector("#city-list");
 
-// Adding the event listener
+// Adding the event listener and local storage
 searchButton.addEventListener("click", function() {
-    var cityName = cityInput.value;
+    var cityName = document.querySelector(".searchInput").value;
+    // setting the cities to local storage
+    localStorage.setItem("City", cityName);
     getWeather(cityName);
   });
+
+// Getting the Cities from local storage and adding to list
+  var getCities = JSON.parse(window.localStorage.getItem('savedCities'));
+  getCities.cityList.append('<li>' + item + '</li>');
+
 
 //   Getting the weather from the API
 function getWeather (cityName) {
@@ -17,7 +25,8 @@ fetch(requestApi)
     return response.json();
 })
 .then(function (data) {
-    console.log (data)
+    console.log (data);
+    displayWeather(data);
 })
 .catch(function(error) {
     console.log("Error:", error);
@@ -31,5 +40,3 @@ function displayWeather(data){
 var currentCity = document.getElementById("current-city");
 currentCity.textContent = "City:" + data.name;
 }
-
-
