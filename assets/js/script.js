@@ -8,6 +8,7 @@ searchButton.addEventListener("click", function() {
     getWeather(cityName);
   });
 
+//   Getting the weather from the API
 function getWeather (cityName) {
 var requestApi = "https://api.openweathermap.org/data/2.5/weather?q="+ cityName +"&units=metric&appid=944e60e41c0c992134e31794af4ab0aa"
 
@@ -24,4 +25,11 @@ fetch(requestApi)
 }
 
 getWeather();
+
+// Function to display the information from the API
+function displayWeather(data){
+var currentCity = document.getElementById("current-city");
+currentCity.textContent = "City:" + data.name;
+}
+
 
